@@ -3,7 +3,6 @@ function p(m, s){
     let b = m[s+1];
     let c = m[s+2];
     while(a>=0 && b>=0 && c>=0){
-        console.log(a, b, c, m);
         m[b] = m[b] - m[a];
         if (m[b] <= 0){
             s = c;
