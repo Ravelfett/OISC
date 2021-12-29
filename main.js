@@ -1,19 +1,20 @@
 function p(m, s){
+  while(s>=0){
     let a = m[s];
     let b = m[s+1];
     let c = m[s+2];
-    while(a>=0 && b>=0 && c>=0){
-        m[b] = m[b] - m[a];
-        if (m[b] <= 0){
-            s = c;
-        } else {
-            s += 3;
-        }
-        a = m[s];
-        b = m[s+1];
-        c = m[s+2];
+    if (a < 0 || b < 0) {
+      s = -1;
+    }else {
+      m[b] = m[b] - m[a];
+      if (m[b] <= 0){
+        s = c;
+      } else {
+        s += 3;
+      }
     }
-    return m
+  }
+  return m
 }
 
 
@@ -25,7 +26,6 @@ const progs = {
   "x * y":                    [["x", "y", 2, -1, 0, 1, 2, 8, 0, 4, 11, 4, 0, 14, 3, 2, 11, -1], 5],
   "sum of n element after K": [["K", 0, 0, -1, 0, 0, 1, 8, 1, 11, 11, 0, 2, 14, 1, 29, 17, 1, 36, 20, 2, 36, 23, 3, 2, 26, 3, 29, 29, 0, 4, 32, 3, 2, 26, 4, 1, 38, -1, "n", "x", "x", "x", "x", 0], 5]
 }
-"39 0 0 -1 0 0 1 8 1 11 11 0 2 14 1 29 17 1 36 20 2 36 23 3 2 26 3 29 29 0 4 32 3 2 26 4 1 38 -1 3 1 3 ​3 0"
 let x = document.getElementById("select");
 for(const p in progs){
   let e = document.createElement("option");
