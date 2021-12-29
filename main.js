@@ -58,6 +58,7 @@ x.onchange = (e) => {
 document.getElementById("run").onclick = (e) => {
     let text = document.getElementById("program").value;
     let prog = text.replace(/\s+|\n/g, ' ').split(" ").map(Number);
+    document.getElementById("result").style.display = "block";
     if (!prog.every(e => !isNaN(e))) {
         document.getElementById("result").innerHTML = "Error while analysing"
         alert("all values should be numbers");
