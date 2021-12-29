@@ -2,17 +2,67 @@
 <html>
 
 <head>
-  <title>OISC</title>
+    <title>OISC</title>
 </head>
+<style>
+    body {
+        background-color: plum;
+        font-family: monospace;
+    }
+    
+    #truc {
+        background-color: purple;
+        color: blanchedalmond;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        -ms-transform: translateY(-50%) translateX(-50%);
+        transform: translateY(-50%) translateX(-50%);
+        padding: 5%;
+        border-radius: 10px;
+    }
+    
+    input,
+    textarea,
+    select,
+    #result {
+        border: none;
+        background-color: #f1f1f1;
+        color: purple;
+        padding: 10px;
+        border-radius: 10px;
+    }
+</style>
 
 <body>
-  <textarea id="program" rows="5" cols="33" style="display: block">100000 100 1 0 5 -1</textarea>
-  <select id="select"></select>
-  P:<input type="number" value=2 id="start" style="width: 50px">
-  <button type="button" id="run">run</button>
-  <div id='result'></div>
-  <a href="./howitworks.html">how it works</a>
-  <script src="main.js" type='text/javascript'></script>
+    <div id="truc">
+        <h1>One Instrusction Set Computer</h1>
+        <textarea id="program" rows="5" cols="33" style="display: block">100000 100 1 0 5 -1</textarea>
+        <select id="select"></select> P:
+        <input type="number" value=2 id="start" style="width: 50px">
+        <button type="button" id="run">run</button>
+        <div id='result' style="display:none"></div>
+        <button type="button" onclick="showHelp()">How it works</button>
+        <script src="main.js" type='text/javascript'></script>
+    </div>
+    <div id="help" style="display: none;">
+        <p>
+            let P be a cursor and M the memory : </br>
+            <pre type="text/javascript">
+A <- M[P]
+B <- M[P+1]
+C <- M[P+2]
+			</pre> the program if either A, B or C is strictly negative : </br>
+            <pre>
+M[B] <- M[B] - M[A]
+if M[B] is negative or null: 
+P = C
+else: 
+P = P + 3
+go back to first step
+</pre>
+        </p>
+    </div>
 </body>
 
 </html>
