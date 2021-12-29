@@ -1,11 +1,25 @@
-<p>
-let P be a cursor and M the memory </br>
-A <- M[P]</br>
-B <- M[P+1]</br>
-C <- M[P+2]</br>
-stop the program if either A, B or C is strictly negative</br>
-M[B] <- M[B] - M[A]</br>
-if M[B] is negative or null: P = C</br>
-else: P = P + 3</br>
-go back to first step
-</p>
+<style>
+    body {
+        background-color: black;
+        color: blanchedalmond;
+    }
+</style>
+
+<body>
+    <p>
+        let P be a cursor and M the memory</br>
+        <pre type="text/javascript">
+        A <- M[P]
+        B <- M[P+1]
+        C <- M[P+2]
+    </pre>the program if either A, B or C is strictly negative : </br>
+        <pre>
+    M[B] <- M[B] - M[A]
+    if M[B] is negative or null: 
+        P = C
+    else: 
+        P = P + 3
+    go back to first step
+    </pre>
+    </p>
+</body>
